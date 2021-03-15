@@ -1,0 +1,44 @@
+{
+"Comment": "A state machine that Orchestrates inbound Flight Msg to different Flight msg components",
+"StartAt": "Validate Flight Number",
+"States": {
+     "Validate Flight Number":{
+	    "Type": "Task",
+		"Resource": "${FlightNumValidationFunctionJAVAArn}",
+		"Retry" : [ {
+        "ErrorEquals": [ "com.demo.flight.FlightDomain.exceptions.RetryableSystemException" ],
+        "IntervalSeconds": 5,
+        "MaxAttempts": 1
+      } ],
+	   "Catch": [ 
+        {
+          "ErrorEquals": ["com.demo.flight.FlightDomain.exceptions.ValidationException"],
+          "Next": "Log to Msg Mgmt service on Validation Failure"
+        },
+		 {
+          "ErrorEquals": ["States.ALL"],
+          "Next": "Log to Msg Mgmt service on Validation Failure"
+        }
+		],
+		"Next" :"Log to Msg Mgmt service on Validation Pass"
+	 },
+
+  "Log to Msg Mgmt service on Validation Failure":{
+    "Type": "Pass",
+	"Next": "Validation Fail State"
+  },
+  "Log to Msg Mgmt service on Validation Pass":{
+    "Type": "Pass",
+	"Next": "Validation Pass State"
+  },
+  "Validation Fail State":{
+   "Type": "Fail",
+   "Cause": "validaiton Exception occured"
+  },
+  "Validation Pass State":{
+   "Type": "Pass",
+   "End": true
+  }
+  
+   }
+}

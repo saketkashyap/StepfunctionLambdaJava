@@ -1,0 +1,8 @@
+com\demo\flight\FlightDomain\exceptions\ValidationException.class
+com\demo\flight\FlightDomain\model\Error.class
+com\demo\flight\FlightDomain\exceptions\UnRetryableSystemException.class
+com\demo\flight\FlightDomain\model\ErrorType.class
+com\demo\flight\FlightDomain\model\FlightMsgType.class
+com\demo\flight\FlightDomain\exceptions\RetryableSystemException.class
+com\demo\flight\FlightDomain\model\FlightMsg.class
+com\demo\flight\FlightDomain\model\FlightMsgResponse.class

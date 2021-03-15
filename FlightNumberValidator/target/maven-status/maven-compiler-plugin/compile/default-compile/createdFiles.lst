@@ -1,0 +1,3 @@
+com\demo\flight\FlightNumberValidator\handler\FlightNumberValidationHandler.class
+com\demo\flight\FlightNumberValidator\validator\FlightNumberValidator$FlightNumberValidatorClient.class
+com\demo\flight\FlightNumberValidator\validator\FlightNumberValidator.class

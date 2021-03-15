@@ -1,0 +1,9 @@
+com\demo\flight\utils\FlightMsgConstants.class
+com\demo\flight\utils\FlightMessageUtils.class
+com\demo\flight\validator\FlightMsgValidator.class
+com\demo\flight\model\FlightMsgType.class
+com\demo\flight\handler\FlightMsgSQSEventHandler.class
+com\demo\flight\utils\LoggingUtils.class
+com\demo\flight\exception\ValidationException.class
+com\demo\flight\eventlistener\App.class
+com\demo\flight\model\FlightMsg.class
